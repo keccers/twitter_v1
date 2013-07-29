@@ -11,4 +11,5 @@ class TwitterUser < ActiveRecord::Base
       )
     end
   end
+
 end
