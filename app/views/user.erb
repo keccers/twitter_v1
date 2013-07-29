@@ -1,7 +1,11 @@
-<h1><%= @user.username %>'s Tweets</h1>
+<% if @waiting %>
+  <%= erb :'_waiting', layout: false %>
+<% else %>
+  <h1><%= @user.username %>'s Tweets</h1>
 
-<ul>
-<% @tweets.each do |tweet| %>
-  <li>Text: <%= tweet.text %></li>
+  <ul>
+    <% @user.tweets.each do |tweet| %>
+    <li>Text: <%= tweet.text %></li>
+    <% end %>
+  </ul>
 <% end %>
-</ul>
